@@ -16,9 +16,7 @@ export const getItems = dispatch => {
       .catch(err => {
         dispatch(errorSlice.actions.getContactsError(err));
       })
-      .finally(() => {
-        dispatch(loadingSlice.actions.isLoading());
-      });
+      .finally(() => dispatch(loadingSlice.actions.isLoading()));
   };
 };
 
@@ -34,7 +32,7 @@ export const deleteContact = id => dispatch => {
     .catch(err => {
       dispatch(errorSlice.actions.deleteContactsError(err));
     })
-    .finally(dispatch(loadingSlice.actions.isLoading()));
+    .finally(() => dispatch(loadingSlice.actions.isLoading()));
 };
 
 export const postContacts = contactToPost => dispatch => {
@@ -49,5 +47,5 @@ export const postContacts = contactToPost => dispatch => {
     .catch(err => {
       dispatch(errorSlice.actions.postContactsError(err));
     })
-    .finally(dispatch(loadingSlice.actions.isLoading()));
+    .finally(() => dispatch(loadingSlice.actions.isLoading()));
 };
