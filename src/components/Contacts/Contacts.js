@@ -20,7 +20,7 @@ const taskFilter = (contacts, filter) => {
 
 class Contacts extends Component {
   static propTypes = {
-    addContacts: PropTypes.func,
+    getItems: PropTypes.func.isRequired,
     filterState: PropTypes.string.isRequired,
     contactState: PropTypes.array.isRequired,
   };

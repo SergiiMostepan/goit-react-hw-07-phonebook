@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import { filterSlice } from '../../../Redux/filterReducers/filterReducers';
 import {
-  getFilterQuery,
-  getFilterOnChangeQuery,
+  memoizedGetFilterQuery,
+  memoizedGetFilterOnChangeQuery,
 } from '../../../Redux/filterReducers/filterSelectors';
 import Filter from './Filter';
 
 const mapStateToProps = state => ({
-  filterState: getFilterQuery(state),
+  filterState: memoizedGetFilterQuery(state),
 });
 
 const mapDispatchToProps = dispatch => ({
   changeFilter: e =>
-    dispatch(getFilterOnChangeQuery(filterSlice, e.target.value)),
+    dispatch(memoizedGetFilterOnChangeQuery(filterSlice, e.target.value)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

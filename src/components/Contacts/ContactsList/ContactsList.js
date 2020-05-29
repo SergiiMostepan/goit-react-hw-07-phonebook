@@ -5,7 +5,7 @@ import ContactTransition from '../transitions/Contacts.module.css';
 import ContactContainer from './ContacContainer';
 import styles from './Contactlist.module.css';
 
-const ContactList = ({ contacts, deleteContact }) =>
+const ContactList = ({ contacts }) =>
   contacts.length > 0 ? (
     <TransitionGroup component="ul" className={styles.continer}>
       {contacts.map(({ userName, userPhone, id }) => (

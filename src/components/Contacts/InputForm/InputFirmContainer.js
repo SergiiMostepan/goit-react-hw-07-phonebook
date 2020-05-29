@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 // import { contactSlice } from '../../../Redux/contactsReducers/contactsReducers';
 import {
   // OnAddContact,
-  getContacts,
+  memoizedGetContacts,
 } from '../../../Redux/contactsReducers/contactSelectors';
 import { postContacts } from '../../../Redux/contactsReducers/contactsOperators';
 import InputForm from './InputForm';
 import shortid from 'shortid';
 
 const mapStateToProps = state => ({
-  contactState: getContacts(state),
+  contactState: memoizedGetContacts(state),
 });
 
 const mapDispatchToProps = dispatch => ({
